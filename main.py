@@ -79,7 +79,7 @@ class Board:
         if len(bot_1.getCard()) != 2:
             bot_1.addCard(desk.getTopOfDesk())
 
-        print(bot_1.getCard())
+        print(bot_1.cal())
         #SCREEN.blit(self.backCard_image, self.backCard_image_desk_loc)
         #SCREEN.blit(self.backCard_image, self.backCard_image_bot_1)
         #SCREEN.blit(self.backCard_image, self.backCard_image_bot_2)
