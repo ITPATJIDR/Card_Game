@@ -1,3 +1,9 @@
-class bot :
+class Bot :
         def __init__(self):
-                print("HI")
+            self.cards = []
+
+        def addCard(self,newCard):
+            self.cards.append(newCard)
+
+        def getCard(self):
+            return self.cards 
