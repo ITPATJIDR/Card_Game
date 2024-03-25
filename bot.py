@@ -18,6 +18,6 @@ class Bot :
             convertResult = str(result)
 
             if result >= 10:
-                print(convertResult[1])
+                return convertResult[1]
             else: 
-                print(convertResult[0])
+                return convertResult[0]

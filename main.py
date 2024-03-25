@@ -78,8 +78,14 @@ class Board:
         
         if len(bot_1.getCard()) != 2:
             bot_1.addCard(desk.getTopOfDesk())
+        if len(bot_2.getCard()) != 2:
+            bot_2.addCard(desk.getTopOfDesk())
+        if len(bot_3.getCard()) != 2:
+            bot_3.addCard(desk.getTopOfDesk())
 
-        print(bot_1.cal())
+        print(f"bot 1 card is  {bot_1.getCard()} and cal is {bot_1.cal()}")
+        print(f"bot 2 card is  {bot_2.getCard()} and cal is {bot_2.cal()}")
+        print(f"bot 3 card is  {bot_3.getCard()} and cal is {bot_3.cal()}")
         #SCREEN.blit(self.backCard_image, self.backCard_image_desk_loc)
         #SCREEN.blit(self.backCard_image, self.backCard_image_bot_1)
         #SCREEN.blit(self.backCard_image, self.backCard_image_bot_2)
@@ -99,6 +105,8 @@ if __name__ == "__main__":
     board = Board()
     desk = Desk(current_dir)
     bot_1 = Bot()
+    bot_2 = Bot()
+    bot_3 = Bot()
     Myclock = pygame.time.Clock()
 
     while True:
