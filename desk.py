@@ -21,3 +21,6 @@ class Desk :
             self.Desk.pop(0) 
             return topDesk
 
+        def getDesk(self):
+            return self.Desk
+

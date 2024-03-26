@@ -1,9 +1,5 @@
-class player :
-        def __init__(self):
-            self.Cards = []
-        
-        def addCard(self,newCard):
-            self.Cards.append(newCard)
+from bot import Bot
 
-        def getCard(self):
-            return self.Cards
+class Player(Bot) :
+    def test(self):
+        print("Hio")
