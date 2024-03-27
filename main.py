@@ -107,6 +107,7 @@ class Board:
                         bot_1.draw(desk)
                         bot_2.draw(desk)
                         bot_3.draw(desk)
+                        self.result_init(self.checkResult(bot_1.cal(),bot_2.cal(),bot_3.cal(),player.cal()))
                         self.state += 1
                         return
         
@@ -148,6 +149,12 @@ class Board:
 
         pygame.display.flip()
 
+    def result_init(self, Winner):
+        self.font = pygame.font.Font('font/CoffeeTin.ttf', 50)
+        self.result_text = self.font.render(f" {Winner} WIN ", 1, BLACK)
+        self.result_size =self.font.size(f" {Winner} WIN ")
+        self.buttonLoc = (525,300)
+        
 
     def result(self):
         for event in pygame.event.get():
@@ -170,7 +177,27 @@ class Board:
             card_images = player.getCard_image() 
             SCREEN.blit(card_images[i], self.player_card_loc[i])
         
+        SCREEN.blit(self.result_text, self.buttonLoc)
+
         pygame.display.flip()
+
+
+    def checkResult(self,bot_1,bot_2,bot_3,player):
+        cal_Array = [bot_1,bot_2,bot_3,player]
+        target = 9
+        closest_value = None
+        min_difference = float('inf')
+
+        for num in cal_Array:
+            difference = abs(int(num) - target)
+            if difference < min_difference:
+                min_difference = difference
+                closest_value = num
+
+        if cal_Array.index(closest_value) != 3 :
+            return "BOT"
+        else:
+            return "PLAYER"
 
 
 if __name__ == "__main__":
